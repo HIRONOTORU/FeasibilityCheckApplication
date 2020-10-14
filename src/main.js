@@ -17,9 +17,11 @@ new Vue({
     }
   },
   mounted () {
+    setInterval(
     axios
-    //.get("/disaster?qzqsmdata=9AAFAB9ED64007D1F465F841F192000802DFB300F7ED004FFFFFA0100000004")
-    .get("/list")
+    .get("/disaster?qzqsmdata=9AAFAB9ED64007D1F465F841F192000802DFB300F7ED004FFFFFA0100000004")
+    //.get("/list") //Jasonで取り出すようにする。
     .then(response => (this.info = response))
+    ,1000)
   }
 })
